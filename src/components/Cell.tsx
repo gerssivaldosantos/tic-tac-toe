@@ -6,13 +6,12 @@
 *  */
 
 type props = {
-    id: string,
+    id: number,
     symbol: string,
-    onPlay: (id: string) => void
+    onPlay: (id: number) => void
 }
 
 export default function Cell({id, symbol, onPlay}: props) {
-    console.log(symbol)
     return <button onClick={() => onPlay(id)}>
         {symbol}
     </button>
