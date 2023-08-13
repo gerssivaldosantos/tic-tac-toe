@@ -1,0 +1,12 @@
+.table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+.table > button:not(:empty) {
+    background-color: darkgray;
+}
