@@ -5,10 +5,12 @@
 * - Emitir um evento de clique leva o Id como callback para indicar qual célula que foi marcada
 *  */
 
+import {CellId} from "../types.ts";
+
 type props = {
-    id: number,
+    id: CellId,
     symbol: string,
-    onPlay: (id: number) => void
+    onPlay: (id: CellId) => void
 }
 
 export default function Cell({id, symbol, onPlay}: props) {
