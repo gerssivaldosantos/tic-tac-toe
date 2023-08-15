@@ -1,17 +1,17 @@
 import Cell from "./Cell.tsx";
 import { useState } from "react";
-import {CellId, CellIds, TableState} from "../types.ts";
+import {CellId, CellIds, gameSymbol, play, TableState} from "../types.ts";
 
 type Props = {
-    symbolStarts: string;
-    onCellUpdate: (newState: TableState, before:TableState) => void
+    symbolStarts: gameSymbol;
+    onCellUpdate: (movement:play, state:{newState: TableState, beforeState:TableState}) => void
 };
 
 export default function Table({ symbolStarts, onCellUpdate }: Props) {
     const onCellPlay = (id: CellId) => {
         if (tableState[id] === '') {
             const newState = { ...tableState, [id]: turnOwner };
-            onCellUpdate(newState, tableState)
+            onCellUpdate({id, symbol: turnOwner}, {newState, beforeState: tableState})
             setTableState(newState);
             if (turnOwner === 'X') {
                 setTurnOwner('O');
@@ -43,7 +43,7 @@ export default function Table({ symbolStarts, onCellUpdate }: Props) {
         />
     ));
 
-    const [turnOwner, setTurnOwner] = useState(symbolStarts);
+    const [turnOwner, setTurnOwner] = useState<gameSymbol>(symbolStarts);
 
     return <div className="table">{cells}</div>;
 }
