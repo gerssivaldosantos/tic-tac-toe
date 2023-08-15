@@ -21,4 +21,8 @@ export type play = {
     symbol: gameSymbol
 }
 
-export type GameResume = Record<number, play>
+export type GameResume = Array<play>
+
+export type gameResult = {winner?: gameSymbol}
+
+export type KeysOfType<T> = (keyof T)[];
