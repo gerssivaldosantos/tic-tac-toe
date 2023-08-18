@@ -1,6 +1,7 @@
 import Cell from "./Cell.tsx";
 import { useState } from "react";
 import {CellId, CellIds, gameSymbol, play, TableState} from "../types.ts";
+import styled from "styled-components";
 
 type Props = {
     symbolStarts: gameSymbol;
@@ -45,5 +46,15 @@ export default function Table({ symbolStarts, onCellUpdate }: Props) {
 
     const [turnOwner, setTurnOwner] = useState<gameSymbol>(symbolStarts);
 
-    return <div className="table">{cells}</div>;
+    return <TableStyle>{cells}</TableStyle>;
 }
+
+const TableStyle = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    height: 50%;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+`
