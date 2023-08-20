@@ -45,7 +45,7 @@ describe('General', () => {
                 8: "X",
                 9: "X"
             })
-            expect(result.winner).toEqual(undefined)
+            expect(result.winner).toEqual(null)
         })
     })
 })
