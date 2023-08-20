@@ -22,7 +22,7 @@ describe('General', () => {
             const result: gameResult = calculateVictory({
                 1: "O",
                 2: "O",
-                3: "",
+                3: null,
                 4: "X",
                 5: "O",
                 6: "X",
