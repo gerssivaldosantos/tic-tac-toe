@@ -41,8 +41,8 @@ describe('General', () => {
                 4: "X",
                 5: "O",
                 6: "O",
-                7: "X",
-                8: "O",
+                7: "O",
+                8: "X",
                 9: "X"
             })
             expect(result.winner).toEqual(undefined)
