@@ -28,5 +28,5 @@ export function calculateVictory(board: TableState): gameResult {
     }
 
     // If no winner found, return undefined
-    return { winner: undefined };
+    return { winner: null };
 }

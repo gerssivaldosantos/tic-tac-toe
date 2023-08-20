@@ -23,6 +23,6 @@ export type play = {
 
 export type GameResume = Array<play>
 
-export type gameResult = {winner?: gameSymbol}
+export type gameResult = {winner: gameSymbol | null}
 
 export type KeysOfType<T> = (keyof T)[];
