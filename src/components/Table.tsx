@@ -54,6 +54,7 @@ const TableStyle = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
     padding: 1rem;
+    grid-auto-rows: minmax(0, 100%);
     height: 50%;
     width: 100%;
     align-self: center;
