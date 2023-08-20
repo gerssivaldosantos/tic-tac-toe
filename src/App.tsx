@@ -6,10 +6,11 @@ import {calculateVictory} from "./helpers/general.ts";
 import styled from 'styled-components';
 
 const AppStyle = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f4f4;
 `
 
 function App() {

@@ -25,10 +25,15 @@ export default function Cell({id, symbol, onPlay}: props) {
 
 const Button = styled.button`
     cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: darkgrey;
+    color: white;
     height: auto;
-    border: 1px solid black;
+    border: none;
+    border-radius: 1rem;
     &:not(:empty) {
         cursor: pointer;
-        background-color: lightgreen ;
+        background-color: darkgreen ;
     }
 `

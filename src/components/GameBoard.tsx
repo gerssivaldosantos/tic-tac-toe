@@ -27,11 +27,14 @@ const GameBoardStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
     width: 100%;
-    margin: 1rem;
   }
   
   div > button {
+    border: none;
+    background-color: white;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.20);
     border-radius: 0.5rem;
     width: 100%;
     font-size: 1.2rem;

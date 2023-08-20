@@ -52,7 +52,8 @@ export default function Table({ symbolStarts, onCellUpdate }: Props) {
 const TableStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
+    gap: 1rem;
+    padding: 1rem;
     height: 50%;
     width: 100%;
     align-self: center;
