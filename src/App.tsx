@@ -1,10 +1,17 @@
-import './App.css'
 import Table from "./components/Table.tsx";
 import GameBoard from "./components/GameBoard.tsx";
 import {useState} from "react";
 import {gameResult, GameResume, play, TableState} from "./types.ts";
 import {calculateVictory} from "./helpers/general.ts";
+import styled from 'styled-components';
 
+const AppStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f4f4;
+`
 
 function App() {
     const [gameResume, setGameResume] =
@@ -18,10 +25,10 @@ function App() {
         }
     }
     return (
-        <>
+        <AppStyle>
             <Table onCellUpdate={onUpdateGame} symbolStarts={'X'}/>
             <GameBoard gameResume={gameResume} />
-        </>
+        </AppStyle>
     )
 }
 
