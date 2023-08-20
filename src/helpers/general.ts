@@ -2,7 +2,7 @@ import {
     gameResult,
     TableState,
     CellId
-} from "../types.ts"; // Import the typings from your file
+} from "../types.ts";
 
 export function calculateVictory(board: TableState): gameResult {
     const victoriesPossibilities: CellId[][] = [
