@@ -1,28 +1,32 @@
-import {gameResult, KeysOfType, TableState} from "../types.ts";
+import {
+    gameResult,
+    TableState,
+    CellId
+} from "../types.ts";
 
-export const calculateVictory = (tableState: TableState):gameResult => {
-    const victoriesPossibilities = [
+export function calculateVictory(board: TableState): gameResult {
+    const victoriesPossibilities: CellId[][] = [
         /* HORIZONTAL */
-        [1,2,3],
-        [4,5,6],
-        [7,8,9],
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
         /* VERTICAL */
-        [1,4,5],
-        [2,5,8],
-        [3,6,9],
+        [1, 4, 7],
+        [2, 5, 8],
+        [3, 6, 9],
         /* DIAGONAL */
-        [1,5,9],
-        [3,5,7]
-    ]
-    const tableKeys: KeysOfType<TableState> = Object.keys(tableState) as unknown as KeysOfType<TableState>
-    const xPlayerIndexes:number[] =
-        tableKeys.filter(key => tableState[key] === 'X')
-    /*const oPlayerIndexes:number[] =
-        tableKeys.filter(key => tableState[key] === 'O')*/
-    if ( victoriesPossibilities.find(
-        possibility => possibility.every( id => xPlayerIndexes.includes(id) ) )
-    ) {
-        return {winner: 'X'}
+        [1, 5, 9],
+        [3, 5, 7],
+    ];
+
+    // Check each winning combination
+    for (const combo of victoriesPossibilities) {
+        const [a, b, c] = combo;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            return { winner: board[a] };
+        }
     }
-    return {}
+
+    // If no winner found, return undefined
+    return { winner: null };
 }
