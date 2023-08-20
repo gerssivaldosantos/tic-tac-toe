@@ -1,13 +1,13 @@
 export type TableState = {
-    1: gameSymbol| '';
-    2: gameSymbol| '';
-    3: gameSymbol| '';
-    4: gameSymbol| '';
-    5: gameSymbol| '';
-    6: gameSymbol| '';
-    7: gameSymbol| '';
-    8: gameSymbol| '';
-    9: gameSymbol| '';
+    1: gameSymbol| null;
+    2: gameSymbol| null;
+    3: gameSymbol| null;
+    4: gameSymbol| null;
+    5: gameSymbol| null;
+    6: gameSymbol| null;
+    7: gameSymbol| null;
+    8: gameSymbol| null;
+    9: gameSymbol| null;
 };
 
 export type CellIds = Array<CellId>;
