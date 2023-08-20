@@ -8,7 +8,7 @@ type props = {
 
 export default function GameBoard({gameResume}: props) {
     const resumes: JSX.Element[] = gameResume.map((value: play, index: number) => {
-       return <button key={index}> {index + 1}º  {value.symbol}#{value.id}</button>
+       return <button id={`${index}-${value.symbol}-${value.id}`} key={index}> {index + 1}º  {value.symbol}#{value.id}</button>
     })
     return <GameBoardStyle>
         <div>
