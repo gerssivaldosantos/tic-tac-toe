@@ -15,7 +15,7 @@ type props = {
 
 export default function Cell({id, symbol, onPlay}: props) {
     return <>
-    <Button id={`${id}`} onClick={() => onPlay(id)}>
+    <Button data-testid={`${id}`} onClick={() => onPlay(id)}>
         {symbol}
     </Button>
     </>
