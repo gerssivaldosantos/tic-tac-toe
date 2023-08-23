@@ -6,9 +6,10 @@ import styled from "styled-components";
 type Props = {
     symbolStarts: gameSymbol;
     onCellUpdate: (movement:play, state:{newState: TableState, beforeState:TableState}) => void
+    initialTableState: TableState
 };
 
-export default function Table({ symbolStarts, onCellUpdate }: Props) {
+export default function Table({ symbolStarts, onCellUpdate, initialTableState }: Props) {
     const onCellPlay = (id: CellId) => {
         if (tableState[id] === null) {
             const newState = { ...tableState, [id]: turnOwner };
@@ -22,17 +23,7 @@ export default function Table({ symbolStarts, onCellUpdate }: Props) {
         }
     };
 
-    const [tableState, setTableState] = useState<TableState>({
-        1: null,
-        2: null,
-        3: null,
-        4: null,
-        5: null,
-        6: null,
-        7: null,
-        8: null,
-        9: null
-    });
+    const [tableState, setTableState] = useState<TableState>(initialTableState);
 
     const cellIds:CellIds = [1,2,3,4,5,6,7,8,9];
     const cells = cellIds.map((id) => (
@@ -46,7 +37,7 @@ export default function Table({ symbolStarts, onCellUpdate }: Props) {
 
     const [turnOwner, setTurnOwner] = useState<gameSymbol>(symbolStarts);
 
-    return <TableStyle>{cells}</TableStyle>;
+    return <TableStyle data-testid={'table'}>{cells}</TableStyle>;
 }
 
 const TableStyle = styled.div`
